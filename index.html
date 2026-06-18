@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фишинг-детектив: распознай мошенника</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Навигация -->
+    <header class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="#" class="navbar-brand">
+                    🕵️ Фишинг-детектив
+                </a>
+                <nav>
+                    <ul class="navbar-menu">
+                        <li><a href="#hero">Главная</a></li>
+                        <li><a href="#" id="navRules">Правила</a></li>
+                        <li><a href="#" id="navStats">Статистика</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <h1>🛡️ Распознай мошенника</h1>
+            <p>10 сообщений от имени госорганов. Отличишь настоящие от фишинга?</p>
+        </section>
+
+        <!-- Игровая область -->
+        <section class="game-area">
+            <!-- Сайдбар -->
+            <aside class="sidebar">
+                <h3>📊 Киберграмотность</h3>
+
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Прогресс</span>
+                        <span id="progressText">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-label">Правильно:</span>
+                    <span class="stat-value" id="correctCount">0 из 10</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-label">Раунд:</span>
+                    <span class="stat-value" id="roundNum">1 из 10</span>
+                </div>
+
+                <div class="level-display">
+                    <div class="level-icon" id="levelIcon">🔰</div>
+                    <div id="levelText">Новичок</div>
+                </div>
+            </aside>
+
+            <!-- Карточка сообщения -->
+            <div>
+                <div class="message-card" id="messageCard">
+                    <div class="card-header">
+                        <div class="card-header-icon">
+                            <span id="msgIcon">📧</span>
+                            <span id="msgType">Email</span>
+                        </div>
+                        <div class="card-date" id="msgDate">18.06.2026</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sender">
+                            От: <strong id="msgSender">...</strong>
+                        </div>
+                        <h2 class="card-subject" id="msgSubject">Загрузка...</h2>
+                        <p class="card-text" id="msgBody">Пожалуйста, подождите...</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-safe" id="btnSafe">
+                            ✅ Безопасно
+                        </button>
+                        <button class="btn btn-phishing" id="btnPhishing">
+                            ⚠️ Мошенники
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно: Результат -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header" id="modalHeader">
+                <h3 class="modal-title" id="modalTitle">Результат</h3>
+                <button class="modal-close" id="modalClose">×</button>
+            </div>
+            <div class="modal-body">
+                <p id="modalText"></p>
+                <div class="explanation-box">
+                    <strong>💡 Объяснение:</strong>
+                    <p id="explanationText"></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal" id="btnNext">Далее →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно: Завершение -->
+    <div class="modal" id="finishModal">
+        <div class="modal-content">
+            <div class="modal-header info">
+                <h3 class="modal-title">🏆 Игра завершена!</h3>
+            </div>
+            <div class="modal-body finish-screen">
+                <div class="final-score" id="finalScore">0%</div>
+                <div class="final-level" id="finalLevel">Ваш уровень</div>
+                <div class="final-progress">
+                    <div class="progress-bar">
+                        <div id="finalProgress" class="progress-fill"></div>
+                    </div>
+                    <div style="text-align: center; margin-top: 0.5rem; font-weight: 600;">
+                        <span id="finalProgressText">0 из 10</span>
+                    </div>
+                </div>
+                <p class="final-message" id="finalMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal" id="btnRestart">
+                    🔄 Играть заново
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Персонаж-помощник -->
+    <div class="helper-character" id="helperCharacter">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232563eb'/%3E%3Ctext x='50' y='65' font-size='50' text-anchor='middle' fill='white'%3E🕵️%3C/text%3E%3C/svg%3E"
+            alt="Детектив">
+    </div>
+    <div class="helper-bubble" id="helperBubble">
+        Привет! Я помогу тебе!
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/rules.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
