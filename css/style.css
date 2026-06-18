@@ -1,0 +1,686 @@
+/* Импорт шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap');
+
+/* Переменные */
+:root {
+    --primary-color: #2563eb;
+    --success-color: #10b981;
+    --danger-color: #ef4444;
+    --warning-color: #f59e0b;
+    --dark-bg: #1e293b;
+    --light-bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-radius: 12px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --font-main: 'Inter', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
+}
+
+/* Сброс и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Контейнер */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Навигация */
+.navbar {
+    background: var(--dark-bg);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-menu a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero секция */
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Экран правил */
+.rules-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.rules-content {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+}
+
+.rules-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.rules-content h3 {
+    color: var(--text-primary);
+    margin: 1.5rem 0 1rem;
+    font-size: 1.25rem;
+}
+
+.rules-content ul {
+    list-style-position: inside;
+    margin-bottom: 1rem;
+}
+
+.rules-content li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.phishing-signs {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin: 1.5rem 0;
+}
+
+.phishing-signs li {
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.phishing-signs li:before {
+    content: "⚠️";
+    position: absolute;
+    left: 0;
+}
+
+.btn-start {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    margin-top: 2rem;
+    width: 100%;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-start:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Игровая область */
+.game-area {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+/* Сайдбар */
+.sidebar {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.sidebar h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.progress-container {
+    margin-bottom: 2rem;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 25px;
+    background: var(--light-bg);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--success-color), #34d399);
+    transition: width 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-family: var(--font-mono);
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--light-bg);
+}
+
+.stat-label {
+    color: var(--text-secondary);
+}
+
+.stat-value {
+    font-weight: 700;
+    font-family: var(--font-mono);
+}
+
+.level-display {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--light-bg);
+}
+
+.level-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Карточка сообщения */
+.message-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.message-card.correct {
+    border: 3px solid var(--success-color);
+    animation: pulse-green 0.5s;
+}
+
+.message-card.incorrect {
+    border: 3px solid var(--danger-color);
+    animation: pulse-red 0.5s;
+}
+
+@keyframes pulse-green {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    }
+}
+
+@keyframes pulse-red {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+    }
+}
+
+.card-header {
+    background: var(--dark-bg);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.card-date {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-sender {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.card-sender strong {
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+}
+
+.card-subject {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.card-text {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.card-footer {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    flex: 1;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-safe {
+    background: white;
+    color: var(--success-color);
+    border: 2px solid var(--success-color);
+}
+
+.btn-safe:hover:not(:disabled) {
+    background: var(--success-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-phishing {
+    background: white;
+    color: var(--danger-color);
+    border: 2px solid var(--danger-color);
+}
+
+.btn-phishing:hover:not(:disabled) {
+    background: var(--danger-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Модальные окна */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1500;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    max-width: 500px;
+    width: 100%;
+    box-shadow: var(--shadow-lg);
+    transform: scale(0.9);
+    transition: transform 0.3s;
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-header {
+    padding: 1.5rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header.success {
+    background: var(--success-color);
+}
+
+.modal-header.danger {
+    background: var(--danger-color);
+}
+
+.modal-header.info {
+    background: var(--primary-color);
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.modal-close {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.explanation-box {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+}
+
+.explanation-box strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.modal-footer {
+    padding: 1.5rem;
+    border-top: 1px solid var(--light-bg);
+}
+
+.btn-modal {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-modal:hover {
+    transform: translateY(-2px);
+}
+
+/* Персонаж-помощник */
+.helper-character {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--primary-color);
+}
+
+.helper-character:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.helper-character img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.helper-bubble {
+    position: fixed;
+    bottom: 110px;
+    right: 20px;
+    background: var(--card-bg);
+    padding: 1rem 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    max-width: 300px;
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    border: 2px solid var(--primary-color);
+}
+
+.helper-bubble.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.helper-bubble:before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: 40px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--primary-color);
+}
+
+/* Финальный экран */
+.finish-screen {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.final-score {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--success-color);
+    font-family: var(--font-mono);
+    margin-bottom: 1rem;
+}
+
+.final-level {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+.final-progress {
+    max-width: 400px;
+    margin: 0 auto 2rem;
+}
+
+.final-message {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .game-area {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .card-footer {
+        flex-direction: column;
+    }
+
+    .navbar-menu {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .rules-content {
+        padding: 2rem;
+    }
+
+    .helper-character {
+        width: 60px;
+        height: 60px;
+    }
+
+    .helper-character img {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Утилиты */
+.hidden {
+    display: none !important;
+}
+
+.text-success {
+    color: var(--success-color);
+}
+
+.text-danger {
+    color: var(--danger-color);
+}
